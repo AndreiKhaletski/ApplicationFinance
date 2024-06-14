@@ -22,8 +22,7 @@ public class AccountDTO {
     @NotBlank(message = "Запрос содержит некорректные данные. Измените запрос и отправьте его ещё раз")
     private String description;
     private Double balance;
-    @NotBlank(message = "Запрос содержит некорректные данные. Измените запрос и отправьте его ещё раз")
     private EnumCurrency type;
-    @NotBlank(message = "Запрос содержит некорректные данные. Измените запрос и отправьте его ещё раз")
+    @NotNull(message = "Запрос содержит некорректные данные. Измените запрос и отправьте его ещё раз")
     private UUID currency;
 }

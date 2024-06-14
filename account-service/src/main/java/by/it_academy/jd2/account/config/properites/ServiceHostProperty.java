@@ -9,9 +9,13 @@ import org.springframework.context.annotation.Configuration;
 @Data
 @Configuration
 @ConfigurationProperties(prefix = "service.host")
-public class SecurityProperty {
+public class ServiceHostProperty {
 
     @Valid
     @NotBlank
     private String security;
+
+    @Valid
+    @NotBlank
+    private String audit;
 }

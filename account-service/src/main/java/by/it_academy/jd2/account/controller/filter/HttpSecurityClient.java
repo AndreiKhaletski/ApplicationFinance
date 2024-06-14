@@ -1,6 +1,6 @@
 package by.it_academy.jd2.account.controller.filter;
 
-import by.it_academy.jd2.account.config.properites.SecurityProperty;
+import by.it_academy.jd2.account.config.properites.ServiceHostProperty;
 import by.it_academy.jd2.account.service.detailesservice.CustomUserDetails;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -32,16 +32,16 @@ public class HttpSecurityClient {
             .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
             .build();
 
-    private final SecurityProperty securityProperty;
+    private final ServiceHostProperty serviceHostProperty;
 
-    public HttpSecurityClient(SecurityProperty securityProperty) {
-        this.securityProperty = securityProperty;
+    public HttpSecurityClient(ServiceHostProperty serviceHostProperty) {
+        this.serviceHostProperty = serviceHostProperty;
     }
 
     public CustomUserDetails verifyToken(HttpServletRequest originalRequest) {
         HttpRequest httpRequest = HttpRequest.newBuilder()
                 .GET()
-                .uri(URI.create(securityProperty.getSecurity() + SECURITY_VERIFICATION_URI))
+                .uri(URI.create(serviceHostProperty.getSecurity() + SECURITY_VERIFICATION_URI))
                 .header(AUTHORIZATION, originalRequest.getHeader(AUTHORIZATION))
                 .build();
 

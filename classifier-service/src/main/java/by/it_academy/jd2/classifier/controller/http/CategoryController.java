@@ -26,7 +26,8 @@ public class CategoryController {
     }
 
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody @Valid CategoryDTO categoryDTO, HttpServletRequest request) {
+    public ResponseEntity<?> create(@RequestBody @Valid CategoryDTO categoryDTO,
+                                    HttpServletRequest request) {
         categoryService.create(categoryDTO);
         auditService.createAuditLog(AuditActionText.CREATE_CATEGORY, request);
         return ResponseEntity.status(HttpStatus.CREATED).build();

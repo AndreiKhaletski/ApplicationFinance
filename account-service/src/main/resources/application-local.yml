@@ -4,6 +4,7 @@ server:
 service:
   host:
     security: http://127.0.0.1:8080
+    audit: http://127.0.0.1:8083
 
 spring:
   datasource:
