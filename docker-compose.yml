@@ -3,7 +3,7 @@ name: finance
 services:
  user-service:
   build: user-service
-  image: user:1.0.46
+  image: user:1.2.0
   environment:
     SPRING_PROFILES_ACTIVE: docker
     DB_LOGIN: final_app
@@ -14,7 +14,7 @@ services:
    - finance-network
  account-service:
   build: account-service
-  image: account:1.0.46
+  image: account:1.2.0
   environment:
     SPRING_PROFILES_ACTIVE: docker
     DB_LOGIN: accop_app
@@ -23,7 +23,7 @@ services:
    - finance-network
  classifier-service:
   build: classifier-service
-  image: classifier:1.0.46
+  image: classifier:1.2.0
   environment:
     SPRING_PROFILES_ACTIVE: docker
     DB_LOGIN: classifier_app
@@ -32,7 +32,7 @@ services:
    - finance-network
  audit-service:
   build: audit-service
-  image: audit:1.0.51
+  image: audit:1.2.0
   environment:
     SPRING_PROFILES_ACTIVE: docker
     DB_LOGIN: audit_app
@@ -41,7 +41,7 @@ services:
    - finance-network
  pg_db:
   build: postgresql
-  image: postgresql-finance:1.0.34
+  image: postgresql-finance:1.2.1
   environment:
    POSTGRES_USER: finance_admin
    POSTGRES_PASSWORD: 855312
@@ -49,7 +49,7 @@ services:
    - finance-network
  pgadmin:
   build: pgadmin
-  image: pgadmin-finance:1.0.34
+  image: pgadmin-finance:1.2.1
   environment:
    PGADMIN_DEFAULT_EMAIL: admin1@finance.com
    PGADMIN_DEFAULT_PASSWORD: finance
@@ -59,7 +59,7 @@ services:
    - finance-network
  proxy:
   build: proxy
-  image: proxy-finance:1.0.34
+  image: proxy-finance:1.2.1
   ports:
    - 80:80
   networks:
