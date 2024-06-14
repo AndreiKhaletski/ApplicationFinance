@@ -1,0 +1,9 @@
+service:
+  host:
+    security: http://user-service:8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://pg_db:5432/auditrecord
+    username: ${DB_LOGIN}
+    password: ${DB_PASSWORD}

@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://90.156.219.8:5432/consolidation
+    username: final_app
+    password: 855312
+
+app:
+  jwt:
+    secret: NDQ1ZjAzNjQtMzViZi00MDRjLTljZjQtNjNjYWIyZTU5ZDYw
+
+email:
+  recipient: unkingip@mail.ru
+  password: ${MAIL_PASSWORD_APP}

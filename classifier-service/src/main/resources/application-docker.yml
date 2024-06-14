@@ -1,0 +1,10 @@
+service:
+  host:
+    security: http://user-service:8080
+    audit: http://audit-service:8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://pg_db:5432/classifier
+    username: ${DB_LOGIN}
+    password: ${DB_PASSWORD}
